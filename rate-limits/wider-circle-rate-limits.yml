@@ -1,0 +1,12 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.widercircle.com/ - no developer documentation exists on any host
+limit_count: 0
+note: >-
+  Not applicable rather than undocumented. Wider Circle publishes no API, so there is
+  no throttle to document, no response headers to record, and no exhaustion status
+  code to observe. Recorded as an explicit zero so a later run does not re-search the
+  same empty surface. No RateLimits pointer is wired for this file - wiring one would
+  credit Wider Circle with a rate-limit signal it does not publish.
+rate_limits: []
+headers: []

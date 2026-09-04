@@ -1,0 +1,14 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.widercircle.com/ (full page sitemap walked - no /pricing, /plans
+  or /developers page exists) and https://www.widercircle.com/health-plans/
+plan_count: 0
+note: >-
+  Wider Circle publishes no plans, tiers or prices of any kind, and no API to attach
+  them to. The company sells a contracted community-health program to Medicare
+  Advantage, Medicaid and D-SNP health plans and provider groups; commercial terms are
+  negotiated per plan through https://www.widercircle.com/contact/ and
+  https://www.widercircle.com/partnerships/. The 94-URL page sitemap at
+  https://www.widercircle.com/page-sitemap.xml contains no pricing page. This is an
+  honest zero, not an unfound page.
+plans: []

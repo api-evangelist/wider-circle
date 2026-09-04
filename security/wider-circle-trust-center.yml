@@ -1,0 +1,59 @@
+generated: '2026-09-04'
+method: searched
+source: https://policy.widercircle.com/ and https://www.widercircle.com/health-plans/
+trust_center:
+  url: https://policy.widercircle.com/
+  status: 200
+  title: Wider Circle Policies
+  kind: published-policy-set
+  note: >-
+    Not a hosted trust-center product (no Vanta/Drata/SafeBase portal and no document
+    request flow). It is the company's own HIPAA/HITRUST policy set published in full
+    as a public web page - roughly 250KB of policy text covering Risk Management,
+    Roles, Data Management, System Access, Auditing, Configuration Management,
+    Facility Access, Incident Response, Breach, Disaster Recovery, Disposable Media,
+    IDS, Vulnerability Scanning, Data Integrity, Data Retention, Employees, Approved
+    Tools and 3rd Party policy, each mapped to the HITRUST CSF control and the HIPAA
+    Security Rule citation it satisfies, plus a full HIPAA-rule-to-control mapping
+    table and the Business Associate Agreement terms.
+certifications:
+- name: HITRUST CSF Certification
+  holder: Wider Circle (Connect for Life program)
+  first_party: true
+  evidence: https://www.widercircle.com/health-plans/
+  quote: 'Wider Circle''s Connect for Life program has achieved HITRUST CSF
+    Certification to manage risk, improve security and privacy posture, and meet key
+    compliance requirements.'
+  verified: '2026-09-04'
+- name: HIPAA
+  holder: Wider Circle
+  first_party: true
+  evidence: https://policy.widercircle.com/
+  note: Operates as a HIPAA Business Associate; signs BAAs with health-plan customers
+    and publishes a HIPAA-rule-to-control mapping.
+  verified: '2026-09-04'
+inherited_certifications:
+  note: >-
+    IMPORTANT ATTRIBUTION NOTE. The policy page also lists ISO 27001, SOC 1, SOC 2,
+    SOC 3, PCI DSS, HITRUST and TRUSTe. Those belong to Salesforce and Box, the
+    platforms Wider Circle builds on, and the page frames them explicitly as
+    "Compliance Inheritance" / "HIPAA Inheritance". They are NOT Wider Circle
+    certifications and are recorded here only so a reader does not misattribute them.
+  holders:
+  - vendor: Salesforce
+    certifications: [ISO 27001, SOC 1, SOC 2, SOC 3, PCI DSS, HITRUST, TRUSTe Privacy Seal]
+  - vendor: Box
+    certifications: [HIPAA]
+related:
+- type: CodeOfConduct
+  url: https://ethics.widercircle.com/
+  status: 200
+- type: PrivacyPolicy
+  url: https://www.widercircle.com/privacy/
+  status: 200
+- type: TermsOfService
+  url: https://www.widercircle.com/terms-of-use/
+  status: 200
+- type: Accessibility
+  url: https://www.widercircle.com/website-accessibility/
+  status: 200

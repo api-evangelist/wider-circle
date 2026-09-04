@@ -1,17 +1,36 @@
 aid: wider-circle
 name: Wider Circle
-description: 'Wider Circle is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Wider Circle is a Redwood City, California community-health company that
+  partners with Medicare Advantage, Medicaid and D-SNP health plans to close the "last
+  mile" of care through peer-driven neighborhood groups. Its Connect for Life program
+  clusters plan members by claims-derived affinity, recruits and trains local Ambassadors
+  and Facilitators, and runs in-person and virtual group programming aimed at annual
+  wellness visits, CAHPS and Star Ratings, medication adherence, social isolation and
+  social determinants of health. The technology stack behind the model is operated as
+  an internal platform and a Salesforce Experience Cloud facilitator portal; as of this
+  profile Wider Circle publishes no public developer program, API documentation, or
+  machine-readable API contract of any kind.'
+image: https://www.widercircle.com/wp-content/uploads/2021/08/wider-circle-logo-2021.svg
 url: https://raw.githubusercontent.com/api-evangelist/wider-circle/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-09-04'
 modified: '2026-09-04'
 tags:
 - Company
+- Healthcare
+- Health Plans
+- Medicare Advantage
+- Medicaid
+- Population Health
+- Social Determinants of Health
+- Member Engagement
+- Care Coordination
+- Community Health
+position: Consuming
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,65 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/wider-circle-plans-pricing.yml
+- type: Packages
+  url: packages/wider-circle-packages.yml
+- type: LLMsTxt
+  url: llms/wider-circle-llms.txt
+- type: Conformance
+  url: conformance/wider-circle-conformance.yml
+- type: TrustCenter
+  url: security/wider-circle-trust-center.yml
+- type: Security
+  url: https://policy.widercircle.com/
+- type: Compliance
+  url: https://www.widercircle.com/health-plans/
+- type: VulnerabilityDisclosure
+  url: security/wider-circle-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/wider-circle-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/wider-circle-stock
+  url: https://www.widercircle.com/
+- type: About
+  url: https://www.widercircle.com/about/
+- type: Blog
+  url: https://www.widercircle.com/blog/
+- type: BlogRSS
+  url: https://www.widercircle.com/feed/
+- type: Support
+  url: https://www.widercircle.com/contact/
+- type: SignUp
+  url: https://www.widercircle.com/sign-up/
+- type: TermsOfService
+  url: https://www.widercircle.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.widercircle.com/privacy/
+- type: GitHubOrganization
+  url: https://github.com/WiderCircle
+x-enrichment:
+  date: '2026-09-04'
+  status: minimal
+  artifacts_added: 9
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Wider Circle runs a real technology platform behind its Connect for Life community-health
+    program, but exposes none of it: the 94-URL page sitemap contains no developer, docs or
+    API page, api.widercircle.com resolves to a CloudFront distribution that has no
+    certificate for that hostname and answers 403 behind it, and the only two authenticated
+    surfaces are a Salesforce Experience Cloud FacilitatorLogin and a help-centre login shell.
+  evidence:
+  - url: https://api.widercircle.com/
+    status: 403
+  - url: https://www.widercircle.com/page-sitemap.xml
+    status: 200
+  - url: https://portal.widercircle.com/
+    status: 200
+  - url: https://www.widercircle.com/openapi.json
+    status: 404
+  - url: https://www.widercircle.com/.well-known/agent-card.json
+    status: 404
+  checked: '2026-09-04'

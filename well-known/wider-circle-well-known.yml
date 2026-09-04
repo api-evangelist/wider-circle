@@ -1,0 +1,155 @@
+generated: '2026-09-04'
+method: probed
+source: live HTTPS probes of every host this record knows (registrable domain, www,
+  the Salesforce Experience Cloud facilitator portal, the public policy host, and the
+  help-center host). Wider Circle publishes no API baseURL and no OpenAPI servers[],
+  so there is no API host to probe beyond these.
+note: >-
+  EVERY PROBE MISSED. No /.well-known document is served anywhere on widercircle.com.
+  Two hosts answer HTTP 200 on every /.well-known/* path, but neither returns a
+  document: portal.widercircle.com is a Salesforce Experience Cloud site whose
+  catch-all returns the FacilitatorLogin redirect shell for any path, and
+  help-center.widercircle.com returns a JS login shell for any path. Both are recorded
+  as misses (status 200, HTML shell) per the pipeline's SPA-catch-all rule, and NO
+  WellKnown or SecurityTxt pointer is emitted for this repo. policy.widercircle.com
+  returns 403 from its origin on /.well-known/* while serving its policy pages at 200.
+  Note that a security reporting address IS published by the company, but in DNS
+  rather than at /.well-known/security.txt - see security/wider-circle-vulnerability-disclosure.yml.
+hosts:
+- host: www.widercircle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: widercircle.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: portal.widercircle.com
+  note: Salesforce Experience Cloud catch-all - every path returns 200 with the
+    FacilitatorLogin redirect shell. Recorded as misses, not documents.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+- host: policy.widercircle.com
+  note: Origin returns 403 on /.well-known/* while serving the public policy pages at 200.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+- host: help-center.widercircle.com
+  note: JS login shell returned 200 for every path. Recorded as misses.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    result: html-shell-not-a-document
+summary:
+  hosts_probed: 5
+  documents_served: 0
+  pointer_emitted: false

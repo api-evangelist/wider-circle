@@ -1,0 +1,68 @@
+generated: '2026-09-04'
+method: searched
+source: https://policy.widercircle.com/ and https://www.widercircle.com/health-plans/
+  and https://github.com/WiderCircle
+regime: health
+regime_note: >-
+  Assessed against the health regulatory regime (HIPAA (US), FHIR / US Core,
+  21st Century Cures Act). Wider Circle is a HIPAA Business Associate operating on
+  Medicare Advantage and Medicaid member data on behalf of health plans, so the
+  privacy/security half of the regime applies and is well documented. The
+  interoperability half - FHIR, US Core, CARIN, Da Vinci, bulk data - does not apply
+  in the usual way, because Wider Circle publishes no API at all: it is a consumer of
+  plan claims and eligibility data, not a publisher of a clinical or member API.
+  Nothing below is inferred from a contract, because there is no contract to read.
+conformance:
+- id: hipaa
+  conforms: true
+  evidence: https://policy.widercircle.com/
+  note: >-
+    Publishes its full HIPAA Security Rule policy set as a public page, each policy
+    mapped to the HIPAA citation it satisfies (164.308, 164.310, 164.312 series), plus
+    a HIPAA-rule-to-control mapping table and the terms of its Business Associate
+    Agreement. This is a documented programme, not a marketing claim.
+- id: hitrust-csf
+  conforms: true
+  evidence: https://www.widercircle.com/health-plans/
+  note: >-
+    HITRUST CSF Certification held by Wider Circle for the Connect for Life program.
+    Every policy on policy.widercircle.com additionally carries an "Applicable
+    Standards from the HITRUST Common Security Framework" section citing the CSF
+    control references it maps to.
+- id: fhir
+  conforms: false
+  evidence: https://github.com/WiderCircle
+  note: >-
+    NOT a conformance claim, recorded as a negative with its evidence. Wider Circle's
+    public GitHub organisation contains two forks of Medplum, an open-source
+    FHIR-native healthcare platform, which is a plausible signal that FHIR is used
+    somewhere internally. Those forks are Medplum's code, not Wider Circle's contract,
+    and per the pipeline's ownership rule nothing was derived from them. Wider Circle
+    publishes no CapabilityStatement, no FHIR base URL, and no FHIR documentation, so
+    fhir_capability_statement and fhir_resource_coverage are genuinely absent rather
+    than unfound.
+- id: oauth2
+  conforms: false
+  evidence: https://www.widercircle.com/.well-known/oauth-authorization-server
+  note: 404. No OAuth authorization server metadata on any host. The Salesforce
+    Experience Cloud facilitator portal presumably uses Salesforce identity, but
+    nothing about it is published.
+- id: oidc
+  conforms: false
+  evidence: https://www.widercircle.com/.well-known/openid-configuration
+  note: 404 on the primary hosts; the two hosts that answer 200 return HTML shells,
+    not discovery documents.
+- id: rfc9457
+  conforms: false
+  evidence: 'no published API contract'
+  note: No error format can be assessed - there is no API.
+domain_standards:
+  note: >-
+    REWARD-ONLY and genuinely empty. The health regime's domain standards (FHIR,
+    SMART on FHIR, US Core, USCDI, Da Vinci, CARIN Blue Button, FHIR Bulk Data,
+    CDS Hooks, C-CDA, HL7 v2, DICOM) are all contract-declared signatures, and Wider
+    Circle declares no contract. No domain-standard signature is asserted. This is an
+    honest absence, not a penalty.
+  checked: [fhir, smart-on-fhir, us-core, uscdi, da-vinci, carin-blue-button,
+            fhir-bulk-data, cds-hooks, c-cda, hl7-v2, dicom]
+  found: []

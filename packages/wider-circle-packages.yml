@@ -1,0 +1,48 @@
+generated: '2026-09-04'
+method: searched
+source: unauthenticated registry queries against npm, PyPI, RubyGems, crates.io,
+  NuGet and Packagist, plus https://github.com/WiderCircle
+package_count: 0
+official_package_count: 0
+note: >-
+  No first-party Wider Circle client library exists in any public registry. Every
+  registry was queried directly and every query came back empty, so this is a measured
+  zero rather than an unsearched gap. There is also no SDK, CLI or SourceCode link in
+  apis.yml to derive candidates from, because Wider Circle publishes no developer
+  program.
+packages: []
+registries_searched:
+- registry: npm
+  query: 'registry.npmjs.org/-/v1/search?text=widercircle'
+  matches: 0
+  verified: '2026-09-04'
+- registry: pypi
+  query: pypi.org/pypi/widercircle/json (404), pypi.org/pypi/wider-circle/json (404)
+  matches: 0
+  verified: '2026-09-04'
+- registry: rubygems
+  query: rubygems.org/api/v1/gems/widercircle.json (404)
+  matches: 0
+  verified: '2026-09-04'
+- registry: crates.io
+  query: 'crates.io/api/v1/crates?q=widercircle'
+  matches: 0
+  verified: '2026-09-04'
+- registry: nuget
+  query: 'azuresearch-usnc.nuget.org/query?q=widercircle'
+  matches: 0
+  verified: '2026-09-04'
+- registry: packagist
+  query: 'packagist.org/search.json?q=widercircle'
+  matches: 0
+  verified: '2026-09-04'
+github_organization:
+  url: https://github.com/WiderCircle
+  public_repos: 5
+  verified: '2026-09-04'
+  note: >-
+    No first-party library. Contents are Frontend-Interview-WC and
+    WC-backend-interview (hiring exercises), take-home-coding-challenge (a fork), and
+    two forks of medplum, the open-source FHIR platform. Nothing here is a Wider
+    Circle contract or client, and per the pipeline ownership rule nothing was derived
+    from the Medplum forks.
